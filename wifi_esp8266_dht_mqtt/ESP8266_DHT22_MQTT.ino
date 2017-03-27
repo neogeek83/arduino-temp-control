@@ -18,8 +18,8 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "<<PUT_WIFI_NETWORK_NAME_HERE>>";
-const char* password = "<<PUT_PASSWORD_HERE>>";
+const char* ssid = "NealNet365";
+const char* password = "s00p3rm4n";
 const char* mqtt_server = "10.0.0.35";
 const char* clientID = "NodeMCUDevKit";
 const char* outTopicTemp = "NodeMCUout/temp";
