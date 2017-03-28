@@ -1,0 +1,1859 @@
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+..
+Exception (29):
+epc1=0x4020dd1a epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000014 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffc60 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffe00:  00000005 00000000 00000020 40101d32  
+3ffffe10:  3ffe8e00 4010500f 3ffec900 3ffffed0  
+3ffffe20:  3ffed900 3ffed304 00000000 ffffffff  
+3ffffe30:  40210e3d 3ffffed0 3ffed450 3ffed304  
+3ffffe40:  3ffea3d4 00000001 40210e89 3ffffed0  
+3ffffe50:  00000000 0011a43c 40103012 00000100  
+3ffffe60:  7fffffff 3ffe9708 3ffe9708 00000001  
+3ffffe70:  4020d661 00080000 3fff0654 00000000  
+3ffffe80:  00000000 3ffea3d4 ffffffd6 3ffea3e4  
+3ffffe90:  3ffec900 00000036 00000001 40211be8  
+3ffffea0:  00000001 3fff01dc 3ffea3d4 00000000  
+3ffffeb0:  3ffed450 00000030 0000001f ffffffff  
+3ffffec0:  40000f58 00000000 00000020 00000000  
+3ffffed0:  00000000 14110808 00640100 00000000  
+3ffffee0:  3ffea3f8 0000014e 00000000 3ffea3ec  
+3ffffef0:  00000000 3ffea3f8 3ffea404 3ffea42d  
+3fffff00:  00000000 00000000 3ffea417 3ffea525  
+3fffff10:  3ffea43a 3ffea456 00000000 3ffea488  
+3fffff20:  00000000 00000000 00000036 00000000  
+3fffff30:  3fff059c 402116b3 3ffec900 3fff01dc  
+3fffff40:  00000000 00000000 3ffec900 3ffea3d4  
+3fffff50:  00000000 00000176 00000000 00000036  
+3fffff60:  00000000 ffffffff 40206ad7 3ffec900  
+3fffff70:  3ffea3c8 3fffdcc0 3ffe8fb0 3ffe8fb0  
+3fffff80:  00000050 3ffec900 3fffdab0 00000000  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8fb0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+.
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+....
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+..
+Exception (9):
+epc1=0x40219f55 epc2=0x00000000 epc3=0x00000000 excvaddr=0xe3bf0a23 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffca0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffe40:  00000000 00000000 00000000 00000119  
+3ffffe50:  00000000 00119fc7 40103012 00000100  
+3ffffe60:  7fffffff 3ffe9714 3ffe9714 4010530f  
+3ffffe70:  401052f0 3fffc100 3fffdcc0 00000000  
+3ffffe80:  00000000 402063e2 00000000 4000050c  
+3ffffe90:  400005e1 40102dac 3fffc200 00000022  
+3ffffea0:  402063e2 00000030 0000001f 3fff0484  
+3ffffeb0:  40000f74 3ffe8f88 0000000f 40206276  
+3ffffec0:  00000005 40206267 00000000 7fffffff  
+3ffffed0:  ffffffff 3fffc6fc 00000000 3fffdab0  
+3ffffee0:  00000000 3fffdcc0 3ffe8f88 00000000  
+3ffffef0:  00000000 3fffdcc0 3ffe8f80 00000030  
+3fffff00:  40106544 00000000 00000064 401004d8  
+3fffff10:  3ffee85c 0000000f 0000000f 401074d4  
+3fffff20:  3ffefdd4 3ffefdd0 0005451f 40225165  
+3fffff30:  3ffee85c 000000ac 000000ac 4010020c  
+3fffff40:  00000001 40231350 3fff0654 4010068c  
+3fffff50:  40106544 00000000 40104f5a 401074e4  
+3fffff60:  40206118 ffffffff 3ffee070 40208a74  
+3fffff70:  402069d5 ffffffff 00000000 00119e0d  
+3fffff80:  3fff0654 402062b6 3fffdab0 00000000  
+3fffff90:  3fffdcc0 3ffe8f80 00000004 402046e7  
+3fffffa0:  3ffe8f88 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+....
+Exception (0):
+epc1=0x4021191b epc2=0x00000000 epc3=0x00000000 excvaddr=0xe3bf0a23 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd00 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffea0:  3ffe9775 00000000 3ffed22c 00000003  
+3ffffeb0:  40211cd3 000000b0 0000001e ffffffff  
+3ffffec0:  40000f58 00000000 00000020 00000000  
+3ffffed0:  00000000 00000000 00000000 00000000  
+3ffffee0:  00000000 00000000 00000000 00000000  
+3ffffef0:  00000000 00000000 00000000 00000000  
+3fffff00:  00000000 00000000 00000000 00000000  
+3fffff10:  00000000 00000000 00000000 00000000  
+3fffff20:  00000000 00000000 00000037 00000000  
+3fffff30:  3fff059c 402116b3 3ffec8d8 3fff01dc  
+3fffff40:  00000000 3ffeda20 3ffec8d8 3ffe974c  
+3fffff50:  3ffe974c 0000002d 00000000 00000037  
+3fffff60:  00000000 ffffffff 40206ad7 3ffec8d8  
+3fffff70:  3ffe9740 3fffdcc0 3ffe8f08 3ffe8f08  
+3fffff80:  000000b0 3ffec8d8 3fffdab0 00000000  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f08 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+..
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+ü
+Connecting to WiFiNetSSID
+...........
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+Exception (0):
+epc1=0x4023cd14  epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffdb0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff50:  00000008 00000001 40104f5a 3ffed038  
+3fffff60:  3ffeb6aa ffffffff 40207173 40206a45  
+3fffff70:  3ffec8d8 3ffeb694 3fffdcc0 3ffe8f78  
+3fffff80:  00000080 3ffec8d8 00000000 3fffdcc0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f78 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+....
+Exception (0):
+epc1=0x4020aee5 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd90 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff30:  40207c71 000b1afc 40206053 3ffe8ca4  
+3fffff40:  40211565 40211677 3ffeaa0c 3ffeaa18  
+3fffff50:  3ffeaa18 00000276 00000000 00000036  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffeaa0c 3fffdcc0 3ffe8fa8 3ffe8fa8  
+3fffff80:  00000080 3ffec900 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 4021ab2f  
+3fffffa0:  3ffe8fa8 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+
+Exception (0):
+epc1=0x40206a5a epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffde0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff80:  00000050 3ffec900 3fffdab0 00000000  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8ed8 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (28):
+epc1=0x4020aebf epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000056 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd90 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff30:  40207c71 3ffec8d8 3fff01dc 00000000  
+3fffff40:  40211565 40211677 3ffeb050 3ffeb05c  
+3fffff50:  3ffeb05c 00000052 00000000 00000038  
+3fffff60:  00000002 0000001a 40206ad7 3ffec8d8  
+3fffff70:  3ffeb050 3fffdcc0 3ffe8fa0 3ffe8fa0  
+3fffff80:  00000080 3ffec8d8 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8fa0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (0):
+epc1=0x40225d1f epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffbe0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffd80:  ffffffff 00000000 3ffe8fc1 00000008  
+3ffffd90:  402071c6 3ffec5e0 3fff01dc 00000001  
+3ffffda0:  402072d2 3ffec5e0 3fff01dc 3fff099c  
+3ffffdb0:  00000002 00000000 3fff059c 40101d32  
+3ffffdc0:  00000008 00000000 00000020 40101d32  
+3ffffdd0:  0000000a 00007294 0000000a 40226f24  
+3ffffde0:  00000005 00000008 40101892 00000002  
+3ffffdf0:  3fff0720 3fff071c 00000080 00000006  
+3ffffe00:  00000000 00000000 00000020 40101d32  
+3ffffe10:  3ffe8e75 4010500f 3ffec900 00000080  
+3ffffe20:  00000000 00000006 3fff099c 40226f58  
+3ffffe30:  3fff059c 00000000 00000000 401074d4  
+3ffffe40:  3ffe9720 00000006 3fff099c 40226f98  
+3ffffe50:  3fff059c 00199704 40103012 00000100  
+3ffffe60:  3fff071c 3fff0720 00000006 00000001  
+3ffffe70:  00000000 70190000 3fff071c 3fff09f8  
+3ffffe80:  3fff0720 3fff099c 3fff071c 40224884  
+3ffffe90:  00000000 00000000 00000001 3ffefef0  
+3ffffea0:  00000000 00000b68 3fff071c 4022493a  
+3ffffeb0:  00000b68 3fff00e4 00000006 3ffefef0  
+3ffffec0:  3fff071c 3ffefef8 3ffefef4 3ffefef0  
+3ffffed0:  3fff071c 3ffefef8 3ffefef4 402287dc  
+3ffffee0:  00000001 1e00000a 00000012 00000000  
+3ffffef0:  00000012 00000002 3ffe8ec0 401074d4  
+3fffff00:  40210000 00000000 00000064 3fff00e0  
+3fffff10:  3ffeb086 3fff00e4 3fff091c 40226cb1  
+3fffff20:  3ffefe04 3fff059c 3fff059c 3ffeda20  
+3fffff30:  00000000 3fff091c 0000001c 3fff059c  
+3fffff40:  3ffeb078 00000000 3fff091c 402260ad  
+3fffff50:  2300000a 00000062 00000000 00000039  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffeb050 3fffdcc0 3ffe8ec8 3ffe8ec8  
+3fffff80:  40206a4a 3ffec900 00000000 3fff061c  
+3fffff90:  3fffdc80 00000000 3fff091c 4021ab2f  
+3fffffa0:  40000f49 3fffdab0 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.
+Exception (9):
+epc1=0x40214237 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000005 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd80 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff20:  40208b0e 00000000 00000037 00000000  
+3fffff30:  3fff0654 00000001 4020aefd 3ffec900  
+3fffff40:  3fff0654 40211677 3ffeb694 3ffeb6a0  
+3fffff50:  3ffeb6a0 00000062 00000000 00000039  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffeb694 3fffdcc0 3ffe8ec0 3ffe8ec0  
+3fffff80:  00000080 3ffec900 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 4021ab2f  
+3fffffa0:  3ffe8ec0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+
+Exception (28):
+epc1=0x40206a5a epc2=0x00000000 epc3=0x00000000 excvaddr=0x0000010c depc=0x00000000
+
+ctx: sys 
+sp: 3ffffde0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff80:  000000b0 3ffec900 3fffdab0 00000000  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f00 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 22.00%
+Current temperature:24.00
+Current humidity:22.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+Exception (0):
+epc1=0x40106dc7 epc2=0x00000000 epc3=0x00000000 excvaddr=0x0000010c depc=0x00000000
+
+ctx: cont 
+sp: 3ffef6f0 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef890:  ffffffff 3ffee674 3ffee87c 3ffee8a8  
+3ffef8a0:  3fffdad0 00000000 3ffee674 40202421  
+3ffef8b0:  3fffdad0 00000000 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+........
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 30.00%
+Current temperature:24.00
+Current humidity:30.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.....
+Exception (0):
+epc1=0x4020af16 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd90 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff30:  40207c71 000c0fc5 40206053 3ffe8ca4  
+3fffff40:  40211565 40211677 3ffeaa0c 3ffeaa18  
+3fffff50:  3ffeaa18 00000276 00000000 00000035  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffeaa0c 3fffdcc0 3ffe8f90 3ffe8f90  
+3fffff80:  00000080 3ffec900 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f90 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (0):
+epc1=0x40206e94 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffdb0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff50:  00000008 00000001 40104f5a 3ffed038  
+3fffff60:  3ffeb066 ffffffff 40207173 40206a45  
+3fffff70:  3ffec900 3ffeb050 3fffdcc0 3ffe8f30  
+3fffff80:  00000080 3ffec900 00000000 3fffdcc0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f30 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (0):
+epc1=0x4027281c epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: cont 
+sp: 3ffef660 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef800:  00000000 0000075b 3ffee730 40202975  
+3ffef810:  3ffe8819 2300000a 3ffe88e8 2300000a  
+3ffef820:  3ffe8674 3ffe84c0 3ffee87c 00000000  
+3ffef830:  00000000 3ffee674 3ffee678 40203344  
+3ffef840:  514d0400 00045454 3ffe848c 40204ba8  
+3ffef850:  00000000 3ffe8664 00000000 3ffee8a8  
+3ffef860:  3fffdad0 3ffee674 3ffee87c 3ffee8a8  
+3ffef870:  3ffe8354 3ffee674 3ffee87c 402033e0  
+3ffef880:  00000000 00000000 3ffee87c 40204074  
+3ffef890:  3fffdad0 3ffee674 3ffee87c 40201f3f  
+3ffef8a0:  3fffdad0 00000000 3ffee674 40202416  
+3ffef8b0:  feefeffe feefeffe 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+Exception (28):
+epc1=0x4020d506 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000009 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd70 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff10:  4020d48f 3ffeb0e4 00000000 3ffeb116  
+3fffff20:  002c4288 1d7fcf5c c6288cbc a5638c8e  
+3fffff30:  a5eb27b8 00c048f7 40200000 3ffec900  
+3fffff40:  3ffe9dac 402116dc 3ffec900 3ffe9d90  
+3fffff50:  3ffe9d90 00000063 00000000 00000035  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffe9d84 3fffdcc0 3ffe8fb0 3ffe8fb0  
+3fffff80:  00000080 3ffec900 00000000 3ffee8b0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8fb0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+Exception (9):
+epc1=0x40204ab5 epc2=0x00000000 epc3=0x00000000 excvaddr=0x0000000f depc=0x00000000
+
+ctx: cont 
+sp: 3ffef6f0 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef890:  ffffffff 3ffee674 3ffee87c 40204abc  
+3ffef8a0:  00000000 00000000 3ffee674 40203564  
+3ffef8b0:  3fffdad0 00000000 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+Exception (0):
+epc1=0x40208aa4 epc2=0x00000000 epc3=0x00000000 excvaddr=0x0000000f depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd80 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff20:  3ffefe04 3fff059c 3fff059c 3ffeda20  
+3fffff30:  40206784 3ffec8d8 3fff01dc 00000008  
+3fffff40:  402115b2 3ffec8d8 3ffeaa0c 3ffeaa18  
+3fffff50:  3ffeaa18 0000005e 00000000 00000039  
+3fffff60:  00000002 0000001a 40206ad7 3ffec8d8  
+3fffff70:  3ffeaa0c 3fffdcc0 3ffe8f58 3ffe8f58  
+3fffff80:  00000080 3ffec8d8 00000000 3ffee8b0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f58 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+....
+Exception (0):
+epc1=0x4024421c epc2=0x00000000 epc3=0x00000000 excvaddr=0x0000000f depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd80 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff20:  3ffefdd4 3ffefdd0 000a84eb 40225165  
+3fffff30:  40207c71 3ffefdd0 4020aefd 3ffec900  
+3fffff40:  3fff0654 40211677 3ffe9740 3ffe974c  
+3fffff50:  3ffe974c 00000276 00000000 00000037  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffe9740 3fffdcc0 3ffe8f90 3ffe8f90  
+3fffff80:  00000080 3ffec900 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 4021ab2f  
+3fffffa0:  3ffe8f90 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 30.00%
+Current temperature:24.00
+Current humidity:30.00
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.
+Exception (0):
+epc1=0x40208aa1 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffc70 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffe10:  3fff0974 3fff099c 3fff099c 40225779  
+3ffffe20:  40206784 00000000 3ffe8bac 00000000  
+3ffffe30:  4021b169 00000000 00000043 00000000  
+3ffffe40:  4022302a 3fff059c 3fff0934 40221512  
+3ffffe50:  3fff019c 3fff059c 3fff0934 40221732  
+3ffffe60:  7fffffff 3ffe96fc 3ffe96fc 3fff019c  
+3ffffe70:  3fff0934 3fff0084 3fff059c 40221fd0  
+3ffffe80:  0a000001 000fea2e 00002200 4000050c  
+3ffffe90:  00000111 3ffe9dd6 0000010d 3fff00b0  
+3ffffea0:  3fff008c 00000004 3fff019c 00000224  
+3ffffeb0:  00000000 00000000 00000008 00000001  
+3ffffec0:  40000f58 00000000 00000020 3ffe9dce  
+3ffffed0:  3fff059c 3fff019c 3fff0974 40225568  
+3ffffee0:  00000043 00000000 3ffe9dba 3fff00e4  
+3ffffef0:  00000000 3fffdcb0 3ffee080 401074d4  
+3fffff00:  40100000 00000000 00000064 3fff00e0  
+3fffff10:  3ffe9dba 3fff00e4 3fff019c 40226ca4  
+3fffff20:  00000002 1d7fcf5c 3fff059c 3ffeda20  
+3fffff30:  00000000 3fff019c 0000001c 3fff059c  
+3fffff40:  3ffe9dac 00000000 3fff019c 402260ad  
+3fffff50:  0100000a 00000276 00000000 00000038  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffe9d84 3fffdcc0 3ffe8ef0 3ffe8ef0  
+3fffff80:  40206a4a 3ffec900 00000000 3fff05ec  
+3fffff90:  3fffdc80 00000000 3fff019c 4021ab2f  
+3fffffa0:  40000f49 3fffdab0 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (0):
+epc1=0xd01047d6 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: cont 
+sp: 3ffef670 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef810:  3ffe8819 2300000a 3ffe88e8 402047e4  
+3ffef820:  3ffe8674 3ffe84c0 3ffee678 40202a3b  
+3ffef830:  00000000 3ffee674 3ffee678 40203377  
+3ffef840:  514d0400 00045454 3ffe848c 40204ba8  
+3ffef850:  00000000 3ffe8664 00000000 3ffee8a8  
+3ffef860:  3fffdad0 3ffee674 3ffee87c 3ffee8a8  
+3ffef870:  3ffe8354 3ffee674 3ffee87c 402033e0  
+3ffef880:  00000000 00000000 3ffee87c 40204074  
+3ffef890:  3fffdad0 3ffee674 3ffee87c 40201f3f  
+3ffef8a0:  3fffdad0 00000000 3ffee674 40202416  
+3ffef8b0:  feefeffe feefeffe 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+Excep
+Exception (4):
+epc1=0x400005cb epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffaf0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3ffffc90:  3ffe96f0 00000000 00000000 e5cdebe4  
+3ffffca0:  40001f46 00000006 40103012 00000100  
+3ffffcb0:  7fffffff 3ffe96f0 3ffe96f0 00000001  
+3ffffcc0:  00000001 00007fff 00000000 00000000  
+3ffffcd0:  00000000 00199391 00002200 4000050c  
+3ffffce0:  3fffc278 40102dac 3fffc200 00000022  
+3ffffcf0:  3ffe96fc 3ffffd60 3ffffd60 3ffe8a4f  
+3ffffd00:  40002514 3fffdd3c 00000000 00000000  
+3ffffd10:  00000000 3ffec608 00000004 00000001  
+3ffffd20:  402072d2 00000000 00000000 3ffffcb0  
+3ffffd30:  00000002 00000000 00000020 40101d32  
+3ffffd40:  3ffffd60 3ffffd60 00000004 40201878  
+3ffffd50:  00000000 4020e388 3ffeda20 3fff099c  
+3ffffd60:  3ffe8a48 00000000 4000dee8 00000000  
+3ffffd70:  00000000 00000000 3fff09d6 3fff099c  
+3ffffd80:  00000000 00000003 3fff059c 40225d75  
+3ffffd90:  00000002 00000000 4000dee8 00000000  
+3ffffda0:  00000000 00000000 00000000 00000000  
+3ffffdb0:  00000000 3fff0720 3fff059c 40225fdc  
+3ffffdc0:  402320b0 4000dee8 00000000 00000000  
+3ffffdd0:  00000000 00000000 00000000 40219f6f  
+3ffffde0:  00000002 00000000 4000dee8 00000000  
+3ffffdf0:  00000000 00000000 00000000 4010530f  
+3ffffe00:  401052f0 3fffc100 3ffe9756 00000000  
+3ffffe10:  00000000 4000dee8 3ffec8d8 00000006  
+3ffffe20:  400005e1 001a5428 3ffed304 40102bd4  
+3ffffe30:  4000dee8 00000030 00000015 4010020c  
+3ffffe40:  40207c71 3ffe90fa 3ffe9756 00000006  
+3ffffe50:  3ffee070 3ffed3ac 00000031 7fffffff  
+3ffffe60:  00000000 3ffe8e75 3ffe8e70 00000001  
+3ffffe70:  00000000 3ffe9756 3ffe90e0 00000000  
+3ffffe80:  3fffc278 40102dac 3fffc200 00000022  
+3ffffe90:  3ffe96fc 00000000 3fff091c 401074e4  
+3ffffea0:  402046ca 00000030 00000015 ffffffff  
+3ffffeb0:  40000f49 3ffee8a8 00000000 3fffd9d0  
+3ffffec0:  00000000 00000000 00000000 fffffffe  
+3ffffed0:  ffffffff 3fffc6fc 00000001 3fffdab0  
+3ffffee0:  00000000 3fffdad0 3ffee8a8 00000030  
+3ffffef0:  00000010 00000000 3ffe8f98 401074d4  
+3fffff00:  40220000 00000000 0000007d 3fff00e0  
+3fffff10:  3ffeb6ca 3fff00e4 3fff019c 40226cb1  
+3fffff20:  3ffefe04 3fff059c 3fff059c 3ffeda20  
+3fffff30:  40207c71 3fff019c 0000001c 3fff059c  
+3fffff40:  40206e88 00000000 3ffe9740 3ffe974c  
+3fffff50:  00000008 0000005e 00000000 0000003e  
+3fffff60:  3ffe9756 0000001a 40206ad7 40206a45  
+3fffff70:  3ffec8d8 3ffe9740 3fffdcc0 3ffe8fa8  
+3fffff80:  00000080 3ffec8d8 00000000 3ffee8b0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8fa8 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Exception (9):
+epc1=0x402063df epc2=0x00000000 epc3=0x00000000 excvaddr=0x80000013 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffdf0 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff90:  3fffdcc0 3ffe8eb8 00000004 402046e7  
+3fffffa0:  3ffe8ec0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+....
+Exception (9):
+epc1=0x4020aee6 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000055 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd90 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff30:  40207c71 3ffec900 3fff01dc 00000000  
+3fffff40:  40211565 40211677 3ffeb050 3ffeb05c  
+3fffff50:  3ffeb05c 00000276 00000000 00000037  
+3fffff60:  00000002 0000001a 40206ad7 3ffec900  
+3fffff70:  3ffeb050 3fffdcc0 3ffe8ed0 3ffe8ed0  
+3fffff80:  00000080 3ffec900 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 4021ab2f  
+3fffffa0:  3ffe8ed0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+..
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+Exception (0):
+epc1=0x40106dd8 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000055 depc=0x00000000
+
+ctx: cont 
+sp: 3ffef680 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef820:  3ffe8674 3ffe84c0 3ffee678 40202a3b  
+3ffef830:  00000000 3ffee674 3ffee678 4020335c  
+3ffef840:  514d0400 00045454 3ffe848c 40204ba8  
+3ffef850:  00000000 3ffe8664 00000000 3ffee8a8  
+3ffef860:  3fffdad0 3ffee674 3ffee87c 3ffee8a8  
+3ffef870:  3ffe8354 3ffee674 3ffee87c 402033e0  
+3ffef880:  00000000 00000000 3ffee87c 40204074  
+3ffef890:  3fffdad0 3ffee674 3ffee87c 40201f3f  
+3ffef8a0:  3fffdad0 00000000 3ffee674 40202416  
+3ffef8b0:  feefeffe feefeffe 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+
+Exception (9):
+epc1=0x40106dd2 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000061 depc=0x00000000
+
+ctx: cont 
+sp: 3ffef6b0 end: 3ffef8d0 offset: 01a0
+
+>>>stack>>>
+3ffef850:  3ffee87c 3fdfffff 3ffee674 40204abc  
+3ffef860:  3fffdad0 00000000 3ffee674 40203572  
+3ffef870:  3ffe88ec 00000000 3ffee87c 3ffee8a8  
+3ffef880:  3fffdad0 00000000 3ffee87c 4020408c  
+3ffef890:  ffffffff 3ffee674 3ffee87c 3ffee8a8  
+3ffef8a0:  3fffdad0 00000000 3ffee674 4020241b  
+3ffef8b0:  3fffdad0 00000000 3ffee8a0 40204778  
+3ffef8c0:  feefeffe feefeffe 3ffee8b0 40100718  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+
+Exception (28):
+epc1=0x402141ec epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd80 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff20:  3ffee070 3ffe8ca4 001224f7 40225165  
+3fffff30:  40207c71 00124314 4020aefd 3ffec8d8  
+3fffff40:  3fff0654 40211677 3ffe9740 3ffe974c  
+3fffff50:  3ffe974c 0000005e 00000000 00000039  
+3fffff60:  00000002 0000001a 40206ad7 3ffec8d8  
+3fffff70:  3ffe9740 3fffdcc0 3ffe8f68 3ffe8f68  
+3fffff80:  00000080 3ffec8d8 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 402046e7  
+3fffffa0:  3ffe8f68 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.....
+Exception (0):
+epc1=0x40214217 epc2=0x00000000 epc3=0x00000000 excvaddr=0x00000000 depc=0x00000000
+
+ctx: sys 
+sp: 3ffffd80 end: 3fffffb0 offset: 01a0
+
+>>>stack>>>
+3fffff20:  3ffee070 3ffe8ca4 000c6ce3 40225165  
+3fffff30:  3fff0654 000c896b 4020aefd 3ffec8d8  
+3fffff40:  3fff0654 40211677 3ffea3c8 3ffea3d4  
+3fffff50:  3ffea3d4 00000276 00000000 00000037  
+3fffff60:  00000002 0000001a 40206ad7 3ffec8d8  
+3fffff70:  3ffea3c8 3fffdcc0 3ffe8fa0 3ffe8fa0  
+3fffff80:  00000080 3ffec8d8 00000000 3fffdcb0  
+3fffff90:  402063ff 3fffdab0 00000000 4021ab2f  
+3fffffa0:  3ffe8fa0 40000f49 3fffdab0 40000f49  
+<<<stack<<<
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+...
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...
+ ets Jan  8 2013,rst cause:4, boot mode:(3,7)
+
+wdt reset
+load 0x4010f000, len 1384, room 16 
+tail 8
+chksum 0x2d
+csum 0x2d
+v00000000
+~ld
+þ
+Connecting to WiFiNetSSID
+.......
+WiFi connected
+IP address: 
+10.0.0.30
+------------------------------------
+Temperature
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    50.00 *C
+Min Value:    0.00 *C
+Resolution:   2.00 *C
+------------------------------------
+------------------------------------
+Humidity
+Sensor:       DHT11
+Driver Ver:   1
+Unique ID:    -1
+Max Value:    80.00%
+Min Value:    20.00%
+Resolution:   5.00%
+------------------------------------
+Attempting MQTT connection...connected
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00
+Temperature: 24.00 *C
+Humidity: 19.00%
+Current temperature:24.00
+Current humidity:19.00

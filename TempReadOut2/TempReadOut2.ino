@@ -59,9 +59,14 @@ void dht11_wrapper() {
 int receiver = 3; // Signal Pin of IR receiver to Arduino Digital Pin 3
 IRrecv irrecv(receiver);     // create instance of 'irrecv'
 decode_results results;      // create instance of 'decode_results'
-int setTemp = 72;
+int setTemp = 76;
+
+int relay_pin = 4;
+int relay_state = LOW; //LOW=OFF, HIGH=ON
 
 void setup() {
+  pinMode(relay_pin, OUTPUT);
+  
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
 
@@ -115,16 +120,26 @@ void loop() {
 }
 
 void writeToLCD(){
+  int tempF = (int)DHT11.getFahrenheit();
+  lcd.print("Temp:"); lcd.print((int)DHT11.getCelsius()); lcd.print("C/");
+  lcd.print(tempF); lcd.print("F|");
   
-  lcd.print("Temp: "); lcd.print((int)DHT11.getCelsius()); lcd.print("C (");
-  lcd.print((int)DHT11.getFahrenheit()); lcd.print("F) ");
+  lcd.print(setTemp);
+  lcd.print("F");
   
   lcd.setCursor(0, 1);
   lcd.print("Humidity:");
-  lcd.print((int)DHT11.getHumidity()); lcd.print("% ");
+  lcd.print((int)DHT11.getHumidity()); lcd.print("%|");
   
-   lcd.print(setTemp);
-   lcd.print("F");
+  if (setTemp <= tempF){ 
+    lcd.print("ON ");
+    relay_state = HIGH;
+  } else {
+    lcd.print("OFF");
+    relay_state = LOW;
+  }
+
+  digitalWrite(relay_pin, relay_state);
 }
 
 
