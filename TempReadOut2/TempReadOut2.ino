@@ -62,6 +62,9 @@ decode_results results;      // create instance of 'decode_results'
 int setTemp = 76;
 int setHumidity = 50;
 
+int thresholdTempMargin = 3;
+int thresholdHumidityMargin = 3;
+
 bool overrideOn = false;
 
 int relay_pin = 4;
@@ -143,15 +146,17 @@ void writeToLCD(){
   lcd.print("Humidity:");
   lcd.print((int)DHT11.getHumidity()); lcd.print("%|");
   
-  if (setTemp <= tempF || setHumidity <= humidity || overrideOn){ 
+  if (setTemp < tempF || setHumidity < humidity || overrideOn){ 
     lcd.print("ON ");
     relay_state = HIGH;
-  } else {
+    digitalWrite(relay_pin, relay_state);
+    
+  } else { //if ( tempF > (setTemp + thresholdTempMargin) || humidity > (setHumidity + thresholdHumidityMargin)) {
     lcd.print("OFF");
     relay_state = LOW;
+    digitalWrite(relay_pin, relay_state);
   }
 
-  digitalWrite(relay_pin, relay_state);
 }
 
 
