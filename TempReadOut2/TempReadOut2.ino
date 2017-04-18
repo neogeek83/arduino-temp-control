@@ -60,6 +60,9 @@ int receiver = 3; // Signal Pin of IR receiver to Arduino Digital Pin 3
 IRrecv irrecv(receiver);     // create instance of 'irrecv'
 decode_results results;      // create instance of 'decode_results'
 int setTemp = 76;
+int setHumidity = 50;
+
+bool overrideOn = false;
 
 int relay_pin = 4;
 int relay_state = LOW; //LOW=OFF, HIGH=ON
@@ -77,14 +80,21 @@ void loop() {
   lcd.setCursor(0, 0); // setCursor(col:0-16,row:0-1)
 
   int result = DHT11.acquireAndWait();
-  switch (result)
-  {
+  switch (result) {
   case IDDHTLIB_OK: 
     //lcd.println("OK"); 
     if (irrecv.decode(&results)){ // have we received an IR signal?
       String IRVal = translateIR();
+      
+      if ( IRVal == ">>|" ) setHumidity++;
+      if ( IRVal == "|<<" ) setHumidity--;
+      
       if ( IRVal == "VOL+" ) setTemp++;
       if ( IRVal == "VOL-" ) setTemp--;
+
+      if ( IRVal == "0" ) overrideOn=false;
+      if ( IRVal == "1" ) overrideOn=true;
+      
       irrecv.resume(); // receive the next value
     }
     writeToLCD();
@@ -115,23 +125,25 @@ void loop() {
     break;
   }
 
-
   delay(1000);// DHT11 sampling rate is 1HZ.
 }
 
 void writeToLCD(){
   int tempF = (int)DHT11.getFahrenheit();
-  lcd.print("Temp:"); lcd.print((int)DHT11.getCelsius()); lcd.print("C/");
+  int humidity = (int)DHT11.getHumidity();
+  lcd.print("Temp:");
   lcd.print(tempF); lcd.print("F|");
   
   lcd.print(setTemp);
-  lcd.print("F");
+  lcd.print("F/");
+  lcd.print(setHumidity);
+  lcd.print("%");
   
   lcd.setCursor(0, 1);
   lcd.print("Humidity:");
   lcd.print((int)DHT11.getHumidity()); lcd.print("%|");
   
-  if (setTemp <= tempF){ 
+  if (setTemp <= tempF || setHumidity <= humidity || overrideOn){ 
     lcd.print("ON ");
     relay_state = HIGH;
   } else {
