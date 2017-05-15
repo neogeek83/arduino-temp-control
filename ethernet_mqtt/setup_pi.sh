@@ -14,13 +14,9 @@ apt-get update
 apt-get install -y mosquitto mosquitto-clients
 
 # Install HomeAssistant
-apt-get install python3 python3-venv python3-pip
+apt-get install -y python3 python3-venv python3-pip
 useradd -rm homeassistant
 cd /srv
 mkdir homeassistant
 chown homeassistant:homeassistant homeassistant
-su -s /bin/bash homeassistant
-cd /srv/homeassistant
-python3 -m venv .
-source bin/activate
-pip3 install homeassistant 
+su -c ./pip.sh homeassistant
