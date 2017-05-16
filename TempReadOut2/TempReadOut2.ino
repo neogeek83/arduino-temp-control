@@ -59,12 +59,21 @@ void dht11_wrapper() {
 int receiver = 3; // Signal Pin of IR receiver to Arduino Digital Pin 3
 IRrecv irrecv(receiver);     // create instance of 'irrecv'
 decode_results results;      // create instance of 'decode_results'
+
+  enum mode{AC=0,HEAT=1,HUMIDIFIER=2,DEHUMIDIFIER=3};
+
+/**
+ * CONFIG:
+ */
+
+
 int setTemp = 76;
 int setHumidity = 50;
 
 int thresholdTempMargin = 3;
 int thresholdHumidityMargin = 3;
-
+bool thresholdEnabled = true;
+mode opMode = DEHUMIDIFIER;
 bool overrideOn = false;
 
 int relay_pin = 4;
@@ -97,6 +106,9 @@ void loop() {
 
       if ( IRVal == "0" ) overrideOn=false;
       if ( IRVal == "1" ) overrideOn=true;
+      
+      if ( IRVal == "6" ) thresholdEnabled=false;
+      if ( IRVal == "9" ) thresholdEnabled=true;
       
       irrecv.resume(); // receive the next value
     }
@@ -136,29 +148,104 @@ void writeToLCD(){
   int humidity = (int)DHT11.getHumidity();
   lcd.print("Temp:");
   lcd.print(tempF); lcd.print("F|");
-  
-  lcd.print(setTemp);
-  lcd.print("F/");
-  lcd.print(setHumidity);
-  lcd.print("%");
-  
+
+  if (opMode == HEAT || opMode == AC) {
+    lcd.print(setTemp);
+    lcd.print("F");
+  } else {
+    lcd.print(setHumidity);
+    lcd.print("%");
+  }
   lcd.setCursor(0, 1);
   lcd.print("Humidity:");
-  lcd.print((int)DHT11.getHumidity()); lcd.print("%|");
-  
-  if (setTemp < tempF || setHumidity < humidity || overrideOn){ 
-    lcd.print("ON ");
-    relay_state = HIGH;
-    digitalWrite(relay_pin, relay_state);
-    
-  } else { //if ( tempF > (setTemp + thresholdTempMargin) || humidity > (setHumidity + thresholdHumidityMargin)) {
-    lcd.print("OFF");
-    relay_state = LOW;
-    digitalWrite(relay_pin, relay_state);
-  }
+  lcd.print(humidity); lcd.print("%|");
 
+  switch (opMode){
+    case HEAT:
+      if (thresholdEnabled){
+        
+        //OFF
+        if ( !overrideOn && (setTemp  <  (tempF - thresholdTempMargin))){
+          setRelay(false);
+
+        //ON
+        } else if ( (setTemp > tempF) || overrideOn){
+          setRelay(true);
+        }
+        
+      } else {
+        setRelay(setTemp > tempF || overrideOn);
+      }
+      break;
+    case AC:
+      if (thresholdEnabled){
+        
+        //OFF
+        if ( !overrideOn && (setTemp  >  (tempF + thresholdTempMargin))){
+          setRelay(false);
+
+        //ON
+        } else if ( (setTemp < tempF) || overrideOn){
+          setRelay(true);
+        }
+        
+      } else {
+        setRelay(setTemp < tempF || overrideOn);
+      }
+      break;
+    case HUMIDIFIER:
+      if (thresholdEnabled){
+        
+        //OFF
+        if ( !overrideOn && (setHumidity  <  (humidity - thresholdTempMargin))){
+          setRelay(false);
+
+        //ON
+        } else if ( (setHumidity > humidity) || overrideOn){
+          setRelay(true);
+        }
+        
+      } else {
+        setRelay(setHumidity > humidity || overrideOn);
+      }
+      break;
+    case DEHUMIDIFIER:
+      if (thresholdEnabled){
+        
+        //OFF
+        if ( !overrideOn && (setHumidity  >  (humidity + thresholdTempMargin))){
+          setRelay(false);
+
+        //ON
+        } else if ( (setHumidity < humidity) || overrideOn){
+          setRelay(true);
+        }
+        
+      } else {
+        setRelay(setHumidity < humidity || overrideOn);
+      }
+      break;
+  }
+  printRelayState();
 }
 
+void setRelay(boolean on){
+  if (on){
+     relay_state = HIGH;
+     digitalWrite(relay_pin, relay_state);
+  } else {
+     relay_state = LOW;
+     digitalWrite(relay_pin, relay_state);
+  }
+}
+
+void printRelayState(){
+   if (relay_state){
+     lcd.print("ON ");
+   } else {
+     lcd.print("OFF");
+   }
+}
 
 String translateIR(){ // takes action based on IR code received
 
