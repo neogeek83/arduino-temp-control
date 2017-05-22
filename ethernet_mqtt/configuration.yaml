@@ -1,0 +1,106 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 38.014949
+  longitude: -78.4815715
+
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 233
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+
+mqtt:
+  broker: 127.0.0.1
+
+sensor 1:
+  platform: mqtt
+  name: "Temperature"
+  state_topic: "NodeMCUout/temp"
+  qos: 0
+  unit_of_measurement: "ºC"
+
+sensor 2:
+  platform: mqtt
+  name: "Humidity"
+  state_topic: "NodeMCUout/hum"
+  qos: 0
+  unit_of_measurement: "%"
+
+switch:
+  platform: mqtt
+  name: 'Heat Pump'
+  state_topic: 'NodeMCUout/hp_status'
+  command_topic: 'NodeMCUin'
+  retain: true
+  optimistic: false
+
+
+automation:
+  alias: Turn off heatpump when above 32c
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature
+    above: 33
+    below: 50
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.heat_pump
+
+
+automation 2:
+  alias: Turn on heatpump when below 31c
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature
+    above: 0
+    below: 30
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.heat_pump
+
