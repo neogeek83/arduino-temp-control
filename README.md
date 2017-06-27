@@ -10,6 +10,9 @@ Uses an Arduino along with a LCD, remote and Temp/Humidity Sensor to control a t
  - TempReadOut2 -- Has the better error handling and controls a relay connected to `relay_pin` (digital 4 by default). Fully functional heater termostat(`ON` if temp falls below threshold), as well as humidifier controller(`ON` if humidity falls below a set threshold).  
    - `0` button disables override ON
    - `1` button enables override ON
+   - `6` button disables the threshold feature for local control
+   - `9` button enables the threshold feature for local control
+   - `FUNC/STOP` toggles local/remote control of the relay (L or R is displayed on the top right of the LCD)
    - `>>|` button will increase the humidity on threshold
    - `|<<` button will decrease the humidity on threshold
    - `VOL+` button will increase tempeture on threshold

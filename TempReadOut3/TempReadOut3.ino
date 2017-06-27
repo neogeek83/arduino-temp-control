@@ -46,10 +46,25 @@ IPAddress server(10, 0, 0, 24);
 EthernetClient ethClient;
 PubSubClient client(ethClient);
 
+#define DEBUG_OFF
+
+
+#ifdef DEBUG_ON
+ #define DEBUG_PRINT(x)     Serial.print (x)
+ #define DEBUG_PRINTDEC(x)  Serial.print (x, DEC)
+ #define DEBUG_PRINTLN(x)   Serial.println (x)
+#else
+ #define DEBUG_PRINT(x)
+ #define DEBUG_PRINTDEC(x)
+ #define DEBUG_PRINTLN(x) 
+#endif
+
+bool localControl = false;
+
 void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
+DEBUG_PRINT("Message arrived [");
+  DEBUG_PRINT(topic);
+  DEBUG_PRINT("] ");
   char recvMsg[length+1];
   strncpy(recvMsg, (char*)payload, length);
   recvMsg[length]='\0';
@@ -58,29 +73,28 @@ void callback(char* topic, byte* payload, unsigned int length) {
   String isOn="ON";
   if(topicMonitored.equals(topic)){
      if (isOn.equals(recvMsg)){
-       Serial.print("Confirmed on");
+       DEBUG_PRINT("Confirmed on");
        client.publish("NodeMCUout/hp_status","ON");
-       setRelay(true);
+       if(!localControl) setRelay(true);
      } else {
-       Serial.print("Confirmed off");
+       DEBUG_PRINT("Confirmed off");
        client.publish("NodeMCUout/hp_status","OFF");
-       setRelay(false);
+       if(!localControl) setRelay(false);
      }
   }
 
-  Serial.print(recvMsg);
+  DEBUG_PRINT(recvMsg);
   client.publish("outTopic",recvMsg,length);  
-  Serial.println();
+  DEBUG_PRINTLN("");
 }
-
 
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected())  {
-    Serial.print("Attempting MQTT connection...");
+      DEBUG_PRINT("Attempting MQTT connection...");
     // Attempt to connect
     if (client.connect("arduinoClient")) {
-      Serial.println("connected");
+      DEBUG_PRINTLN("connected");
       // Once connected, publish an announcement...
       client.publish("outTopic","hello world");
 
@@ -91,9 +105,9 @@ void reconnect() {
       client.subscribe("inTopic4");
       client.subscribe("inTopic5");
     } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
+      DEBUG_PRINT("failed, rc=");
+      DEBUG_PRINT(client.state());
+      DEBUG_PRINTLN(" try again in 5 seconds");
       // Wait 5 seconds before retrying
       delay(5000);
     }
@@ -144,6 +158,7 @@ bool thresholdEnabled = true;
 mode opMode = HEAT;
 bool overrideOn = false;
 
+
 int relay_pin = 4;
 int relay_state = LOW; //LOW=OFF, HIGH=ON
 
@@ -155,8 +170,10 @@ void setup() {
 
   irrecv.enableIRIn(); // Start the receiver
 
+  #ifdef DEBUG_ON
+    Serial.begin(57600);
+  #endif
   
-  Serial.begin(57600);
   client.setServer(server, 1883);
   client.setCallback(callback);
   Ethernet.begin(mac, ip);
@@ -194,6 +211,8 @@ void loop() {
       if ( IRVal == "6" ) thresholdEnabled=false;
       if ( IRVal == "9" ) thresholdEnabled=true;
       
+      if ( IRVal == "FUNC/STOP" ) localControl=!localControl;
+      
       irrecv.resume(); // receive the next value
     }
     readSensors();
@@ -201,35 +220,35 @@ void loop() {
     break;
   case IDDHTLIB_ERROR_CHECKSUM: 
     //lcd.println("Error:Checksum error"); 
-    //Serial.println("Error:Checksum error");
+    //DEBUG_PRINTLN("Error:Checksum error");
     break;
   case IDDHTLIB_ERROR_ISR_TIMEOUT: 
     lcd.println("Error:ISR time out error"); 
-    Serial.println("Error:ISR time out error");
+    DEBUG_PRINTLN("Error:ISR time out error");
     break;
   case IDDHTLIB_ERROR_RESPONSE_TIMEOUT: 
     //lcd.println("Error:Response time out error"); 
-    //Serial.println("Error:Response time out error");
+    //DEBUG_PRINTLN("Error:Response time out error");
     break;
   case IDDHTLIB_ERROR_DATA_TIMEOUT: 
     lcd.println("Error:Data time out error"); 
-    Serial.println("Error:Data time out error"); 
+    DEBUG_PRINTLN("Error:Data time out error"); 
     break;
   case IDDHTLIB_ERROR_ACQUIRING: 
     lcd.println("Error:Acquiring"); 
-    Serial.println("Error:Acquiring"); 
+    DEBUG_PRINTLN("Error:Acquiring"); 
     break;
   case IDDHTLIB_ERROR_DELTA: 
     lcd.println("Error:Delta time to small");
-    Serial.println("Error:Delta time to small"); 
+    DEBUG_PRINTLN("Error:Delta time to small"); 
     break;
   case IDDHTLIB_ERROR_NOTSTARTED: 
     lcd.println("Error:Not started"); 
-    Serial.println("Error:Not started"); 
+    DEBUG_PRINTLN("Error:Not started"); 
     break;
   default: 
     lcd.println("Error:Unknown"); 
-    Serial.println("Error:Unknown"); 
+    DEBUG_PRINTLN("Error:Unknown"); 
     break;
   }
 
@@ -237,18 +256,18 @@ void loop() {
 }
 
 void publishTempHum(){
-  int tempC = ((curTempF-32)*5)/8;
+  //int tempC = ((curTempF-32)*5)/8;
   int humidity = curHumidity;
   char temp[3], hum[3];
-  dtostrf(tempC,3,3,temp);
+  dtostrf(curTempF,3,3,temp);
   dtostrf(humidity,3,3,hum);
   client.publish("NodeMCUout/temp",temp);
   client.publish("NodeMCUout/hum",hum);
   
-  //Serial.print("NodeMCUout/temp:");
-  //Serial.println(temp);
-  //Serial.print("NodeMCUout/hummp:");
-  //Serial.println(hum);
+  //DEBUG_PRINT("NodeMCUout/temp:");
+  //DEBUG_PRINTLN(temp);
+  //DEBUG_PRINT("NodeMCUout/hummp:");
+  //DEBUG_PRINTLN(hum);
 }
 
 void readSensors(){
@@ -260,96 +279,109 @@ void writeToLCD(){
   int tempF = curTempF;
   int humidity = curHumidity;
   lcd.print("Temp:");
-  Serial.print("Temp:");
+  DEBUG_PRINT("Temp:");
   lcd.print(tempF); lcd.print("F|");
-  Serial.print(tempF); Serial.print("F|");
+  DEBUG_PRINT(tempF); DEBUG_PRINT("F|");
   
 
   if (opMode == HEAT || opMode == AC) {
     lcd.print(setTemp);
     lcd.print("F");
-    Serial.print(setTemp);
-    Serial.println("F");
+    DEBUG_PRINT(setTemp);
+    DEBUG_PRINTLN("F");
   } else {
     lcd.print(setHumidity);
     lcd.print("%");
-    Serial.print(setHumidity);
-    Serial.println("%");
+    DEBUG_PRINT(setHumidity);
+    DEBUG_PRINTLN("%");
   }
+  lcd.setCursor(15, 0);
+  if(localControl){
+    lcd.print("L");
+  } else {
+    lcd.print("R");
+  }
+  
   lcd.setCursor(0, 1);
   lcd.print("Humidity:");
   lcd.print(humidity); lcd.print("%|");
   
-  Serial.print("Humidity:");
-  Serial.print(humidity); Serial.print("%|");
+  DEBUG_PRINT("Humidity:");
+  DEBUG_PRINT(humidity); DEBUG_PRINT("%|");
 
+
+  printRelayState();
+}
+
+void controlRelay(){
+  if(localControl){
   switch (opMode){
     case HEAT:
       if (thresholdEnabled){
         
         //OFF
-        if ( !overrideOn && (setTemp  <  (tempF - thresholdTempMargin))){
+        if ( !overrideOn && (setTemp  <  (curTempF - thresholdTempMargin))){
           setRelay(false);
 
         //ON
-        } else if ( (setTemp > tempF) || overrideOn){
+        } else if ( (setTemp > curTempF) || overrideOn){
           setRelay(true);
         }
         
       } else {
-        setRelay(setTemp > tempF || overrideOn);
+        setRelay(setTemp > curTempF || overrideOn);
       }
       break;
     case AC:
       if (thresholdEnabled){
         
         //OFF
-        if ( !overrideOn && (setTemp  >  (tempF + thresholdTempMargin))){
+        if ( !overrideOn && (setTemp  >  (curTempF + thresholdTempMargin))){
           setRelay(false);
 
         //ON
-        } else if ( (setTemp < tempF) || overrideOn){
+        } else if ( (setTemp < curTempF) || overrideOn){
           setRelay(true);
         }
         
       } else {
-        setRelay(setTemp < tempF || overrideOn);
+        setRelay(setTemp < curTempF || overrideOn);
       }
       break;
     case HUMIDIFIER:
       if (thresholdEnabled){
         
         //OFF
-        if ( !overrideOn && (setHumidity  <  (humidity - thresholdTempMargin))){
+        if ( !overrideOn && (setHumidity  <  (curHumidity - thresholdTempMargin))){
           setRelay(false);
 
         //ON
-        } else if ( (setHumidity > humidity) || overrideOn){
+        } else if ( (setHumidity > curHumidity) || overrideOn){
           setRelay(true);
         }
         
       } else {
-        setRelay(setHumidity > humidity || overrideOn);
-      }
-      break;
-    case DEHUMIDIFIER:
-      if (thresholdEnabled){
-        
-        //OFF
-        if ( !overrideOn && (setHumidity  >  (humidity + thresholdTempMargin))){
-          setRelay(false);
-
-        //ON
-        } else if ( (setHumidity < humidity) || overrideOn){
-          setRelay(true);
+          setRelay(setHumidity > curHumidity || overrideOn);
         }
+        break;
+      case DEHUMIDIFIER:
+        if (thresholdEnabled){
         
-      } else {
-        setRelay(setHumidity < humidity || overrideOn);
-      }
-      break;
+          //OFF
+          if ( !overrideOn && (setHumidity  >  (curHumidity + thresholdTempMargin))){
+            setRelay(false);
+
+          //ON
+          } else if ( (setHumidity < curHumidity) || overrideOn){
+            setRelay(true);
+          }
+          
+        } else {
+          setRelay(setHumidity < curHumidity || overrideOn);
+        }
+        break;
+    }
   }
-  printRelayState();
 }
 
 void setRelay(boolean on){
@@ -365,10 +397,10 @@ void setRelay(boolean on){
 void printRelayState(){
    if (relay_state){
      lcd.print("ON ");
-     Serial.println("ON ");
+     DEBUG_PRINTLN("ON ");
    } else {
      lcd.print("OFF");
-     Serial.println("OFF");
+     DEBUG_PRINTLN("OFF");
    }
 }
 
