@@ -35,7 +35,7 @@
 // include the library code:
 #include <LiquidCrystal.h>
 #include <SPI.h>
-#include <Ethernet.h>
+#include <Ethernet.h> //NEEDS DIGITAL PINS 10,11,12,13
 #include <PubSubClient.h>
 
 // Update these with values suitable for your network.
@@ -46,6 +46,10 @@ IPAddress server(10, 0, 0, 24);
 EthernetClient ethClient;
 PubSubClient client(ethClient);
 
+////////////////////////
+//  DEBUG OPTION :    //
+////////////////////////
+// use DEBUG_ON for debugging (requires serial connection on startup)
 #define DEBUG_OFF
 
 
@@ -59,6 +63,18 @@ PubSubClient client(ethClient);
  #define DEBUG_PRINTLN(x) 
 #endif
 
+//////////////////
+// RELAY SETTINGS
+//////////////////
+int relay_pins[]    = {  4, A5 };
+//starting state
+int relay_state[]   = { LOW, LOW }; //LOW=OFF, HIGH=ON
+
+//Relay output Mappings(name to index in array relay_pins)
+#define HEAT_RELAY 0
+#define FAN_RELAY 1
+
+
 bool localControl = false;
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -69,15 +85,25 @@ DEBUG_PRINT("Message arrived [");
   strncpy(recvMsg, (char*)payload, length);
   recvMsg[length]='\0';
 
-  String topicMonitored="NodeMCUin";
+  String topicMonitored="NodeMCU1/heat_cmd";
   String isOn="ON";
   if(topicMonitored.equals(topic)){
      if (isOn.equals(recvMsg)){
-       DEBUG_PRINT("On requested");
-       if(!localControl) setRelay(true);
+       DEBUG_PRINT("HEAT ON requested");
+       if(!localControl) setRelay(HEAT_RELAY,true);
      } else {
-       DEBUG_PRINT("Off requested");
-       if(!localControl) setRelay(false);
+       DEBUG_PRINT("HEAT OFF requested");
+       if(!localControl) setRelay(HEAT_RELAY,false);
+     }
+  }
+  topicMonitored="NodeMCU1/fan_cmd";
+  if(topicMonitored.equals(topic)){
+     if (isOn.equals(recvMsg)){
+       DEBUG_PRINT("FAN ON requested");
+       if(!localControl) setRelay(FAN_RELAY,true);
+     } else {
+       DEBUG_PRINT("FAN OFF requested");
+       if(!localControl) setRelay(FAN_RELAY,false);
      }
   }
 
@@ -95,7 +121,8 @@ void reconnect() {
       DEBUG_PRINTLN("connected");
 
       // ... and resubscribe
-      client.subscribe("NodeMCUin");
+      client.subscribe("NodeMCU1/heat_cmd");
+      client.subscribe("NodeMCU1/fan_cmd");
     } else {
       DEBUG_PRINT("failed, rc=");
       DEBUG_PRINT(client.state());
@@ -136,12 +163,13 @@ bool thresholdEnabled = true;
 mode opMode = HEAT;
 bool overrideOn = false;
 
-
-int relay_pin = 4;
-int relay_state = LOW; //LOW=OFF, HIGH=ON
+#define arr_len( x )  ( sizeof( x ) / sizeof( *x ) )
 
 void setup() {
-  pinMode(relay_pin, OUTPUT);
+  for (int i = 0; i < arr_len(relay_pins); i++){
+     pinMode(relay_pins[i], OUTPUT);
+     digitalWrite(relay_pins[i], relay_state[i]);
+  }
   
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
@@ -186,16 +214,22 @@ void loop() {
       if ( IRVal == "0" ) overrideOn=false;
       if ( IRVal == "1" ) overrideOn=true;
       
+      if ( IRVal == "4" ) { setRelay(FAN_RELAY,false); DEBUG_PRINT("FAN_RELAY: ");printRelayState(FAN_RELAY);}
+      if ( IRVal == "7" ) { setRelay(FAN_RELAY,true); DEBUG_PRINT("FAN_RELAY: ");printRelayState(FAN_RELAY);}
+      
       if ( IRVal == "6" ) thresholdEnabled=false;
       if ( IRVal == "9" ) thresholdEnabled=true;
       
       if ( IRVal == "FUNC/STOP" ) localControl=!localControl;
       
+      DEBUG_PRINT("Button pressed: ");
+      DEBUG_PRINTLN(IRVal);  
+      
       irrecv.resume(); // receive the next value
     }
     readSensors();
     writeToLCD();
-    controlRelay();
+    controlRelays();
     break;
   case IDDHTLIB_ERROR_CHECKSUM: 
     //lcd.println("Error:Checksum error"); 
@@ -223,7 +257,7 @@ void loop() {
     break;
   }
 
-  delay(500);// DHT11 sampling rate is 1HZ,DHT22 is 2HZ.
+  delay(500);// DHT11 sampling rate is 1HZ, DHT22 is 2HZ.
 }
 
 void publishTempHum(){
@@ -232,12 +266,12 @@ void publishTempHum(){
   char temp[3], hum[3];
   dtostrf(curTempF,3,3,temp);
   dtostrf(humidity,3,3,hum);
-  client.publish("NodeMCUout/temp",temp);
-  client.publish("NodeMCUout/hum",hum);
+  client.publish("NodeMCU1/temp",temp);
+  client.publish("NodeMCU1/hum",hum);
   
-  //DEBUG_PRINT("NodeMCUout/temp:");
+  //DEBUG_PRINT("NodeMCU1/temp:");
   //DEBUG_PRINTLN(temp);
-  //DEBUG_PRINT("NodeMCUout/hummp:");
+  //DEBUG_PRINT("NodeMCU1/hum:");
   //DEBUG_PRINTLN(hum);
 }
 
@@ -281,10 +315,10 @@ void writeToLCD(){
   DEBUG_PRINT(humidity); DEBUG_PRINT("%|");
 
 
-  printRelayState();
+  printRelayState(0);
 }
 
-void controlRelay(){
+void controlRelays(){
   if(localControl){
   switch (opMode){
     case HEAT:
@@ -292,15 +326,15 @@ void controlRelay(){
         
         //OFF
         if ( !overrideOn && (setTemp  <  (curTempF - thresholdTempMargin))){
-          setRelay(false);
+          setRelay(HEAT_RELAY, false);
 
         //ON
         } else if ( (setTemp > curTempF) || overrideOn){
-          setRelay(true);
+          setRelay(HEAT_RELAY, true);
         }
         
       } else {
-        setRelay(setTemp > curTempF || overrideOn);
+        setRelay(HEAT_RELAY, setTemp > curTempF || overrideOn);
       }
       break;
     case AC:
@@ -308,15 +342,15 @@ void controlRelay(){
         
         //OFF
         if ( !overrideOn && (setTemp  >  (curTempF + thresholdTempMargin))){
-          setRelay(false);
+          setRelay(0, false);
 
         //ON
         } else if ( (setTemp < curTempF) || overrideOn){
-          setRelay(true);
+          setRelay(0, true);
         }
         
       } else {
-        setRelay(setTemp < curTempF || overrideOn);
+        setRelay(0, setTemp < curTempF || overrideOn);
       }
       break;
     case HUMIDIFIER:
@@ -324,15 +358,15 @@ void controlRelay(){
         
         //OFF
         if ( !overrideOn && (setHumidity  <  (curHumidity - thresholdTempMargin))){
-          setRelay(false);
+          setRelay(0, false);
 
         //ON
         } else if ( (setHumidity > curHumidity) || overrideOn){
-          setRelay(true);
+          setRelay(0, true);
         }
         
       } else {
-          setRelay(setHumidity > curHumidity || overrideOn);
+          setRelay(0, setHumidity > curHumidity || overrideOn);
         }
         break;
       case DEHUMIDIFIER:
@@ -340,36 +374,47 @@ void controlRelay(){
         
           //OFF
           if ( !overrideOn && (setHumidity  >  (curHumidity + thresholdTempMargin))){
-            setRelay(false);
+            setRelay(0, false);
 
           //ON
           } else if ( (setHumidity < curHumidity) || overrideOn){
-            setRelay(true);
+            setRelay(0, true);
           }
           
         } else {
-          setRelay(setHumidity < curHumidity || overrideOn);
+          setRelay(0, setHumidity < curHumidity || overrideOn);
         }
         break;
     }
   }
 }
 
-void setRelay(boolean on){
+void setRelay(int i, boolean on){
   if (on){
-     relay_state = HIGH;
-     digitalWrite(relay_pin, relay_state);
-     client.publish("NodeMCUout/hp_status","ON");
+     relay_state[i] = HIGH;
+     digitalWrite(relay_pins[i], relay_state[i]);
+     if (i == HEAT_RELAY) {
+       client.publish("NodeMCU1/heat","ON");
+     } else if (i == FAN_RELAY) {
+       client.publish("NodeMCU1/fan","ON");
+     }
   } else {
-     relay_state = LOW;
-     digitalWrite(relay_pin, relay_state);
-     client.publish("NodeMCUout/hp_status","OFF");
+     relay_state[i] = LOW;
+     digitalWrite(relay_pins[i], relay_state[i]);
+     if (i == HEAT_RELAY) {
+       client.publish("NodeMCU1/heat","OFF");
+     } else if (i == FAN_RELAY) {
+       client.publish("NodeMCU1/fan","OFF");
+     }
   }
-  
+   //DEBUG_PRINT("RELAY PIN TRIGGERED: ");
+   //DEBUG_PRINT(relay_pins[i]);
+   //DEBUG_PRINT(" turned ");
+   //DEBUG_PRINT(relay_state[i]);
 }
 
-void printRelayState(){
-   if (relay_state){
+void printRelayState(int i){
+   if (relay_state[i]){
      lcd.print("ON ");
      DEBUG_PRINTLN("ON ");
    } else {
