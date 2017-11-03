@@ -1,0 +1,115 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 38.014949
+  longitude: -78.4815715
+
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 233
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+
+mqtt:
+  broker: 127.0.0.1
+
+sensor 1:
+  platform: mqtt
+  name: "Temperature"
+  state_topic: "NodeMCU1/temp"
+  qos: 0
+  unit_of_measurement: "°F"
+
+sensor 2:
+  platform: mqtt
+  name: "Humidity"
+  state_topic: "NodeMCU1/hum"
+  qos: 0
+  unit_of_measurement: "%"
+
+switch 1:
+  platform: mqtt
+  name: 'HouseHeat'
+  state_topic: 'NodeMCU1/heat'
+  command_topic: 'NodeMCU1/heat_cmd'
+  retain: true
+  optimistic: false
+
+switch 2:
+  platform: mqtt
+  name: 'HouseFan'
+  state_topic: 'NodeMCU1/fan'
+  command_topic: 'NodeMCU1/fan_cmd'
+  retain: true
+  optimistic: false
+
+climate:
+  - platform: generic_thermostat
+    name: HouseHeat
+    heater: switch.househeat
+    target_sensor: sensor.temperature
+    min_temp: 60
+    max_temp: 85
+    target_temp: 85
+    tolerance: 1
+    min_cycle_duration:
+      minutes: 0
+
+automation:
+  - alias: 'Turn off fan when heat is off'
+    trigger:
+      platform: state
+      entity_id: switch.househeat
+      to: 'off'
+    action:
+      service: switch.turn_off
+      entity_id: switch.housefan
+  - alias: 'Turn on fan when heat is on'
+    trigger:
+      platform: state
+      entity_id: switch.househeat
+      to: 'on'
+    action:
+      service: switch.turn_on
+      entity_id: switch.housefan
