@@ -4,7 +4,7 @@
  can usually tell them by the 16-pin interface. -- Wire up using the below
    Better wiring diiagram(just use data pins defined below): http://www.instructables.com/id/How-to-use-an-LCD-displays-Arduino-Tutorial/step3/The-Circuit/
 
-  The circuit:
+  The circuit: (NOTE!! these pins are overwritten lower down)
  * LCD RS pin to digital pin 7
  * LCD Enable pin to digital pin 8
  * LCD D4 pin to digital pin 9
@@ -37,6 +37,7 @@
 #include <SPI.h>
 #include <Ethernet.h> //NEEDS DIGITAL PINS 10,11,12,13
 #include <PubSubClient.h>
+#include "IRremote.h" //*IRremote* by shirriff,z3t0 (last tested with v2.8.0)
 
 // Update these with values suitable for your network.
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED };
@@ -47,11 +48,14 @@ EthernetClient ethClient;
 PubSubClient client(ethClient);
 
 ////////////////////////
-//  DEBUG OPTION :    //
+//  OPTIONS :         //
 ////////////////////////
 // use DEBUG_ON for debugging (requires serial connection on startup)
 #define DEBUG_OFF
 
+//Uncomment below to turn on MQTT reporting of temps over ethernet
+
+//#define MQTT_ENABLED
 
 #ifdef DEBUG_ON
  #define DEBUG_PRINT(x)     Serial.print (x)
@@ -74,6 +78,8 @@ int relay_state[]   = { LOW, LOW }; //LOW=OFF, HIGH=ON
 #define HEAT_RELAY 0
 #define FAN_RELAY 1
 
+
+int buzzer = 1;//the pin of the active buzzer
 
 bool localControl = false;
 
@@ -141,7 +147,7 @@ LiquidCrystal lcd(7, 8, 9, 5, 6, A0);
 int DHTpin = 2; //Digital pin for comunications
 idDHTLib DHTLib(DHTpin, idDHTLib::DHT22);
 
-#include "IRremote.h"
+
 int receiver = 3; // Signal Pin of IR receiver to Arduino Digital Pin 3
 IRrecv irrecv(receiver);     // create instance of 'irrecv'
 decode_results results;      // create instance of 'decode_results'
@@ -152,7 +158,7 @@ enum mode{AC=0,HEAT=1,HUMIDIFIER=2,DEHUMIDIFIER=3};
  * CONFIG:
  */
 int setTemp = 76;
-int setHumidity = 50;
+int setHumidity = 54;
 
 int curTempF = 0;
 int curHumidity = 0;
@@ -160,7 +166,7 @@ int curHumidity = 0;
 int thresholdTempMargin = 3;
 int thresholdHumidityMargin = 3;
 bool thresholdEnabled = true;
-mode opMode = HEAT;
+mode opMode = DEHUMIDIFIER;
 bool overrideOn = false;
 
 #define arr_len( x )  ( sizeof( x ) / sizeof( *x ) )
@@ -185,16 +191,26 @@ void setup() {
   Ethernet.begin(mac, ip);
   // Allow the hardware to sort itself out
   delay(1500);
+
+  pinMode(buzzer,OUTPUT);//initialize the buzzer pin as an output
+}
+
+void set_buzzer(boolean on){
+  if(on){
+    digitalWrite(buzzer,HIGH);
+  } else {
+    digitalWrite(buzzer,LOW);
+  }
 }
 
 void loop() {
-
+#ifdef MQTT_ENABLED
   if (!client.connected()) {
     reconnect();
   }
   client.loop();
   publishTempHum();
-
+#endif
   
   lcd.setCursor(0, 0); // setCursor(col:0-16,row:0-1)
 
@@ -374,10 +390,12 @@ void controlRelays(){
         
           //OFF
           if ( !overrideOn && (setHumidity  >  (curHumidity + thresholdTempMargin))){
+            set_buzzer(false);
             setRelay(0, false);
 
           //ON
           } else if ( (setHumidity < curHumidity) || overrideOn){
+            set_buzzer(true);
             setRelay(0, true);
           }
           

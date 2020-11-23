@@ -22,7 +22,12 @@ Uses an Arduino along with a LCD, remote and Temp/Humidity Sensor to control a t
  - `ethernet_mqtt` -- Does not have LCD or any sensor support, but joins a `10.x.x.x` network via an eithernet shield and communicates with an MQTT server subscribing to a channel and echoing any received messages out to another channel.
  - `wifi_esp8266_dht_mqtt` -- Reads tempatures successfully after joining a wifi network and publishes them to topics. Ran into reliability issues with the ESP8266 chips so didn't finish. If you use this, make sure you update the ssid and password fields for your network settings.
  - TempReadOut3 -- merges `TempReadOut2` and `ethernet_mqtt` so supports reporting temp back to a PI or other MQTT device. See readme in it's folder for specifics.
- - TempReadOut4 -- takes `TempReadOut3` and upgrades temp sensor to library that supports DHT11 and DHT22 (currently set to use DHT22), also fixed a but in Local/Remote control
- 
+ - TempReadOut4 -- takes `TempReadOut3` and upgrades temp sensor to library that supports DHT11 and DHT22 (currently set to use DHT22), also fixed a but in Local/Remote control. Added an alarm active buzzer that'll go off when in dehumidifier mode, set to run locally, and humidity goes too high. Turns back off once humidity has dropped back down to below set humidity + threshold. 
+   - Deps:
+   - *PubSubClient* by Nick O'Leary(last tested with v2.8.0) 
+   - *IRremote* by shirriff,z3t0 (last tested with v2.8.0)
+   - Others are build into Arduino IDE v1.8.13
+
 # Circuits:
  - For the relay, you'll need to have a NPN transistor to prevent pulling too much current from the arduino. R1=2kohm and R2=10kohm are the values used from Figure 7-2 in http://www.w9xt.com/page_microdesign_pt7_transistor_switching.html using this transitor https://www.onsemi.com/pub/Collateral/PN2222-D.PDF
+ - active buzzer connected from Digital Pin 1 to ground(will buzz when uploading--it's a "feature")
